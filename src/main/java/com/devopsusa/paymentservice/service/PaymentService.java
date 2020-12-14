@@ -21,6 +21,6 @@ public class PaymentService {
     }
 
     public String paymentProcessing(){
-        return new Random().nextBoolean()?"sucess":"false";
+        return new Random().nextBoolean() ? "success" : "false";
     }
 }
