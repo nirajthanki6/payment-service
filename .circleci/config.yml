@@ -49,7 +49,7 @@ jobs: # a collection of steps
     build-and-deploy:
       jobs:
         - build:
-        - deploy-job:
+        - deploy:
             requires:
               - build # only deploy once build job has completed
             filters:
