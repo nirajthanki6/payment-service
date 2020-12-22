@@ -21,9 +21,9 @@ jobs:
           path: target/surefire-reports
       - store_artifacts:
           path: target/paymentservice.jar
-      - deploy:
-          machine:
-            enabled: true
+  deploy:
+    machine:
+      enabled: true
       - run:
           name: Deploy Over SSH
           command: |
