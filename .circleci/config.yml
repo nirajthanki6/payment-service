@@ -41,7 +41,7 @@ jobs: # a collection of steps
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST
+            ssh $SSH_USER@$SSH_HOST < echo 'y'
             cp /target/paymentservice-0.1.jar .
 workflows:
   version: 2
