@@ -34,21 +34,21 @@ jobs: # a collection of steps
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: target/paymentservice-0.1.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
-#      - deploy:
-#          machine:
-#            enabled: true
-#      - run:
-#          name: Deploy Over SSH
-#          command: |
-#            ssh $SSH_USER@$SSH_HOST "<remote deploy command>"
-#workflows:
-#  version: 2
-#  build-and-deploy:
-#    jobs:
-#      - build
-#      - deploy-job:
-#          requires:
-#            - build # only deploy once build job has completed
-#          filters:
-#            branches:
-#              only: master # only deploy on the master branch
+      - deploy:
+          machine:
+            enabled: true
+      - run:
+          name: Deploy Over SSH
+          command: |
+            ssh $SSH_USER@$SSH_HOST mvn deploy
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy-job:
+          requires:
+            - build # only deploy once build job has completed
+          filters:
+            branches:
+              only: master # only deploy on the master branch
