@@ -34,9 +34,10 @@ jobs: # a collection of steps
           # Upload test summary for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: target/paymentservice-0.1.jar
       # See https://circleci.com/docs/2.0/deployment-integrations/ for deploy examples
-      - deploy:
-          machine:
-            enabled: true
+  deploy:
+    machine:
+      enabled: true
+    steps:
       - run:
           name: Deploy Over SSH
           command: |
