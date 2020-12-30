@@ -41,7 +41,8 @@ jobs: # a collection of steps
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST < echo 'y'
+            echo yes | ssh $SSH_USER@$SSH_HOST
+
 workflows:
   version: 2
   build-and-deploy:
