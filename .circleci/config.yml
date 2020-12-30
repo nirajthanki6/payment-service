@@ -41,7 +41,8 @@ jobs: # a collection of steps
       - run:
           name: Deploy Over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST mvn deploy
+            ssh $SSH_USER@$SSH_HOST
+            cp target/paymentservice-0.1.jar /home/nthanki/paymentservice/
 workflows:
   version: 2
   build-and-deploy:
