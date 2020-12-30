@@ -42,7 +42,7 @@ jobs: # a collection of steps
           name: Deploy Over SSH
           command: |
             ssh $SSH_USER@$SSH_HOST
-            cp target/paymentservice-0.1.jar /home/nthanki/paymentservice/
+            cp /target/paymentservice-0.1.jar .
 workflows:
   version: 2
   build-and-deploy:
