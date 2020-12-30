@@ -42,7 +42,7 @@ jobs: # a collection of steps
           name: Deploy Over SSH
           command: |
             ssh $SSH_USER@$SSH_HOST < echo 'y'
-            scp -r target/paymentservice-0.1.jar* $SSH_USER@$SSH_HOST:/home/nthanki/paymentservice/
+            scp -r /target/paymentservice-0.1.jar* $SSH_USER@$SSH_HOST:/home/nthanki/paymentservice/
 workflows:
   version: 2
   build-and-deploy:
