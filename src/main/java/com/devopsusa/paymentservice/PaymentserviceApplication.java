@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.web.client.RestTemplate;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -18,6 +20,8 @@ import java.util.Collections;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableSwagger2
+@Configuration
+@ComponentScan("com.devopsusa.paymentservice")
 public class PaymentserviceApplication {
 
 	public static void main(String[] args) {
