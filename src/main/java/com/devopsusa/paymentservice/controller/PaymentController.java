@@ -11,16 +11,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.Random;
-
 @Controller
-@RequestMapping("/api")
+@RequestMapping("/api/payment")
 public class PaymentController {
 
     @Autowired
     private PaymentService paymentService;
 
-    @PostMapping("/payment/doPayment")
+    @PostMapping("/doPayment")
     public ResponseEntity<Payment> doPayment(@RequestBody Payment payload){
         Payment payment = paymentService.doPayment(payload);
         return new ResponseEntity<Payment>(payment, new HttpHeaders(), HttpStatus.OK);

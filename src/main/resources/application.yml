@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: PAYMENT-SERVICE
+  datasource:
+    url: jdbc:mysql://devopsusa.com:3306/db_ecommerce
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    jpa:
+      hibernate.ddl-auto: update
+      generate-ddl: true
+      show-sql: true
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    hostname: ${vcap.application.uris[0]:localhost}
+    preferIpAddress: true
+    lease-renewal-interval-in-seconds: 10
+    lease-expiration-duration-in-seconds: 20
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: https://springboot-discovery.herokuapp.com/eureka
