@@ -16,6 +16,7 @@ server:
 eureka:
   instance:
     hostname: ${spring.application.name}
+    port: ${server.port}
     preferIpAddress: false
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 20
