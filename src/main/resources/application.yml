@@ -15,7 +15,7 @@ server:
 
 eureka:
   instance:
-    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+    instanceId: ${spring.application.name}
     hostname: ${spring.application.name}
     preferIpAddress: true
     lease-renewal-interval-in-seconds: 10
