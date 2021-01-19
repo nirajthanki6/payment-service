@@ -17,6 +17,7 @@ eureka:
   instance:
     instanceId: ${spring.application.name}
     hostname: ${spring.application.name}
+    non-secure-port: 80
     preferIpAddress: false
     lease-renewal-interval-in-seconds: 10
     lease-expiration-duration-in-seconds: 20
